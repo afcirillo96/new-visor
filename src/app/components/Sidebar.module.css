@@ -3,7 +3,8 @@
     top: 0;
     width: 250px;
     height: 100%;
-    background: #333;
+    background: #242C4F;
+    text-emphasis-color: #fff;
     transition: left 0.3s ease;
   }
 
@@ -26,11 +27,26 @@
   }
   
   .sidebar li:hover {
-    background: #555;
+    background: #fff;
   }
+
+  .sidebarText {
+    margin-bottom: 0.5rem;
+    margin-left: 1rem;
+    font-size: 1rem; 
+    font-weight: 600; 
+    color: #ffffff;
+  }
+
+  .sidebarIcon {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem; 
+    font-weight: 600; 
+    color: #ffffff;
+  }  
   
-  .customIcon {
-    color: #bbb7b7;
+  .sidebarButton {
+    color: #fff ;
     cursor: pointer;
     font-size: 2rem;
     left: 207px;
@@ -39,15 +55,16 @@
     z-index: 999;
   }
 
-  .customIconOpen {
+  .sidebarButtonOpen {
     left: 207px;
   }
 
-  .customIconClosed {
+  .sidebarButtonClosed {
     left: 11px;
   }
   
   .custom-icon:hover {
     display: block;
+    color: rgb(255, 0, 0) ;
   }
   

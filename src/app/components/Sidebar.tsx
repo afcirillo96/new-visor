@@ -3,18 +3,21 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import Head from 'next/head';
+
 import {
     BsSearch,
-    BsEyeFill,
+    BsQuestionSquareFill ,
     BsBookmarkFill,
     BsFillArrowLeftSquareFill,
     BsPeopleFill,
     BsTerminalFill,
     BsFillArrowRightSquareFill,
+    BsLayersFill,
+    BsMapFill
 } from 'react-icons/bs';
-import { AiFillFire, AiFillMessage } from 'react-icons/ai';
-import { IoMdArrowRoundUp } from 'react-icons/io';
-import { MdNightlightRound, MdFeedback } from 'react-icons/md';
+import { MdSource } from "react-icons/md";
+import { FaHistory } from "react-icons/fa";
+import { MdFeedback } from 'react-icons/md';
 import { FaCog } from 'react-icons/fa';
 
 import styles from './Sidebar.module.css'; // Importar estilos como módulo CSS
@@ -30,7 +33,7 @@ const Sidebar = () => {
     const showMore = () => {
         controls.start({
             width: '250px',
-            transition: { duration: 0.001 },
+            transition: { duration: 0.101 },
         });
         controlText.start({
             opacity: 1,
@@ -48,12 +51,13 @@ const Sidebar = () => {
     const showLess = () => {
         controls.start({
             width: '55px',
-            transition: { duration: 0.001 },
+            transition: { duration: 0.101 },
         });
 
         controlText.start({
             opacity: 0,
             display: 'none',
+
         });
 
         controlTitleText.start({
@@ -73,44 +77,35 @@ const Sidebar = () => {
             name: 'Discover',
             items: [
                 {
-                    title: 'Popular',
-                    icon: AiFillFire,
+                    title: 'Config',
+                    icon: FaCog ,
                 },
                 {
-                    title: 'Most Upvoted',
-                    icon: IoMdArrowRoundUp,
+                    title: 'Fuentes',
+                    icon: MdSource,
                 },
                 {
-                    title: 'Best Discussions',
-                    icon: AiFillMessage,
+                    title: 'Capas',
+                    icon: BsLayersFill,
                 },
                 {
-                    title: 'Search',
+                    title: 'Ayuda',
+                    icon: BsQuestionSquareFill ,
+                },
+                {
+                    title: 'Mapas',
+                    icon: BsMapFill,
+                },
+                {
+                    title: 'Historial',
+                    icon: FaHistory ,
+                },
+                {
+                    title: 'Buscador',
                     icon: BsSearch,
                 },
             ],
         },
-        // {
-        //     name: 'Manage',
-        //     items: [
-        //         {
-        //             title: 'Bookmarks',
-        //             icon: BsBookmarkFill,
-        //         },
-        //         {
-        //             title: 'Reading history',
-        //             icon: BsEyeFill,
-        //         },
-        //         {
-        //             title: 'Focus Mode',
-        //             icon: MdNightlightRound,
-        //         },
-        //         {
-        //             title: 'Customize',
-        //             icon: FaCog,
-        //         },
-        //     ],
-        // },
     ];
 
     const datafooter = [
@@ -149,34 +144,27 @@ const Sidebar = () => {
                 {active && (
                     <BsFillArrowLeftSquareFill
                         onClick={showLess}
-                        // className={styles.customIcon ${active ? 'hidden' : ''}}
-                        className={`${styles.customIcon} ${active ? styles.customIconOpen : ''}`}
-
-
+                        className={`${styles.sidebarButton} ${active ? styles.sidebarButtonOpen : ''}`}
                     />
                 )}
                 {!active && (
                     <BsFillArrowRightSquareFill
                         onClick={showMore}
-                        // className={styles.customIcon}
-                        className={`${styles.customIcon} ${!active ? styles.customIconClosed : ''}`}
-
+                        className={`${styles.sidebarButton} ${!active ? styles.sidebarButtonClosed : ''}`}
                     />
                 )}
-
-
 
                 <div className='grow'>
                     {data.map((group, index) => (
                         <div key={index} className='my-2'>
-                            <motion.p animate={controlTitleText} className='mb-2 ml-4 text-sm font-bold text-gray-500'>
+                            <motion.p animate={controlTitleText} className={styles.sidebarText}>
                                 {group.name}
                             </motion.p>
 
                             {group.items.map((item, index2) => (
                                 <div key={index2} className='flex px-4 py-1 cursor-pointer'>
-                                    <item.icon className='text-lg text-gray-500' />
-                                    <motion.p animate={controlText} className='ml-4 text-sm font-bold text-gray-400'>
+                                    <item.icon className={styles.sidebarIcon} />
+                                    <motion.p animate={controlText} className={styles.sidebarText}>
                                         {' '}
                                         {item.title}
                                     </motion.p>
@@ -189,14 +177,14 @@ const Sidebar = () => {
                 <div>
                     {datafooter.map((group, index) => (
                         <div key={index} className='my-2'>
-                            <motion.p animate={controlTitleText} className='mb-2 ml-4 text-sm font-bold text-gray-500'>
+                            <motion.p animate={controlTitleText} className={styles.sidebarText}>
                                 {group.name}
                             </motion.p>
 
                             {group.items.map((item, index2) => (
                                 <div key={index2} className='flex px-4 py-1 cursor-pointer'>
-                                    <item.icon className='text-lg text-gray-500' />
-                                    <motion.p animate={controlText} className='ml-4 text-sm font-bold text-gray-400'>
+                                    <item.icon className={styles.sidebarIcon} />
+                                    <motion.p animate={controlText} className={styles.sidebarText}>
                                         {' '}
                                         {item.title}
                                     </motion.p>
@@ -212,37 +200,3 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
-
-
-
-
-
-
-
-// import { useState } from 'react';
-// import styles from './Sidebar.module.css'; // Importar estilos como módulo CSS
-
-// const Sidebar = () => {
-//   const [isOpen, setIsOpen] = useState(false);
-
-//   const toggleSidebar = () => {
-//     setIsOpen(!isOpen);
-//   };
-
-//   return (
-//     <div>
-//       <button className={styles.toggleButton} onClick={toggleSidebar}>
-//         Toggle
-//       </button>
-//       <div className={`${styles.sidebar} ${isOpen ? styles.open : styles.closed}`}>
-//         <ul>
-//           <li>Item 1</li>
-//           <li>Item 2</li>
-//           <li>Item 3</li>
-//         </ul>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Sidebar;
