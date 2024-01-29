@@ -6,6 +6,7 @@
     background: #242C4F;
     text-emphasis-color: #fff;
     transition: left 0.3s ease;
+    z-index: 99999;
   }
 
   .open {
