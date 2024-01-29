@@ -29,11 +29,25 @@
     background: #555;
   }
   
-  .toggleButton {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 999; /* Asegura que esté por encima del contenido */
-    background: green;
+  .customIcon {
+    color: #bbb7b7;
+    cursor: pointer;
+    font-size: 2rem;
+    left: 207px;
+    position: relative;
+    top: 7px;
+    z-index: 999;
+  }
+
+  .customIconOpen {
+    left: 207px;
+  }
+
+  .customIconClosed {
+    left: 11px;
+  }
+  
+  .custom-icon:hover {
+    display: block;
   }
   
