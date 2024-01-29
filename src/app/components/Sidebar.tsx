@@ -44,7 +44,6 @@ const Sidebar = () => {
             opacity: 1,
             transition: { delay: 0.3 },
         });
-
         setActive(true);
     };
 
@@ -63,12 +62,11 @@ const Sidebar = () => {
         controlTitleText.start({
             opacity: 0,
         });
-
         setActive(false);
     };
 
     useEffect(() => {
-        showMore();
+        showLess();
     }, []);
 
     
@@ -157,14 +155,14 @@ const Sidebar = () => {
                 <div className='grow'>
                     {data.map((group, index) => (
                         <div key={index} className='my-2'>
-                            <motion.p animate={controlTitleText} className={styles.sidebarText}>
+                            <motion.p animate={controlTitleText} className={styles.sidebarTitleText}>
                                 {group.name}
                             </motion.p>
 
                             {group.items.map((item, index2) => (
-                                <div key={index2} className='flex px-4 py-1 cursor-pointer'>
-                                    <item.icon className={styles.sidebarIcon} />
-                                    <motion.p animate={controlText} className={styles.sidebarText}>
+                                <div key={index2} className={styles.menuButton}>
+                                    <item.icon className={styles.buttonIcon} />
+                                    <motion.p animate={controlText} className={styles.buttonText}>
                                         {' '}
                                         {item.title}
                                     </motion.p>
@@ -174,10 +172,10 @@ const Sidebar = () => {
                     ))}
                 </div>
 
-                <div>
+                {/* <div>
                     {datafooter.map((group, index) => (
                         <div key={index} className='my-2'>
-                            <motion.p animate={controlTitleText} className={styles.sidebarText}>
+                            <motion.p animate={controlTitleText} className={styles.sidebarTitleText}>
                                 {group.name}
                             </motion.p>
 
@@ -192,7 +190,7 @@ const Sidebar = () => {
                             ))}
                         </div>
                     ))}
-                </div>
+                </div> */}
             </motion.div>
             
         </div>

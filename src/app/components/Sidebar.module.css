@@ -30,21 +30,6 @@
     background: #fff;
   }
 
-  .sidebarText {
-    margin-bottom: 0.5rem;
-    margin-left: 1rem;
-    font-size: 1rem; 
-    font-weight: 600; 
-    color: #ffffff;
-  }
-
-  .sidebarIcon {
-    margin-bottom: 0.5rem;
-    font-size: 1.5rem; 
-    font-weight: 600; 
-    color: #ffffff;
-  }  
-  
   .sidebarButton {
     color: #fff ;
     cursor: pointer;
@@ -54,7 +39,7 @@
     top: 7px;
     z-index: 999;
   }
-
+  
   .sidebarButtonOpen {
     left: 207px;
   }
@@ -63,8 +48,41 @@
     left: 11px;
   }
   
+  .sidebarTitleText {
+    margin-bottom: 0.5rem;
+    margin-left: 1rem;
+    font-size: 1rem; 
+    font-weight: 600; 
+    color: #ffffff;
+  }
+  
   .custom-icon:hover {
     display: block;
     color: rgb(255, 0, 0) ;
   }
+  
+  .buttonText {
+    margin-bottom: 0.5rem;
+    margin-left: 1rem;
+    font-size: 1rem; 
+    font-weight: 600; 
+    color: #ffffff;
+  }
+
+  .buttonIcon {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem; 
+    font-weight: 600; 
+    color: #ffffff;
+  }  
+  
+  .menuButton {
+    cursor: pointer;
+    display: flex;
+    padding-bottom: 0.25rem;
+    padding-top: 0.25rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
   
