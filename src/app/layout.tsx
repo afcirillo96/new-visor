@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import MapComponent from "./map/MapComponent";
-import SidebarMenu from "./components/sidebarMenu";
+import Sidebar from "./components/Sidebar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,11 +20,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>{children}
       <div>
-        <div></div>
-
+          <Sidebar/>
         <div>{children}</div>
           <MapComponent/>
-        <SidebarMenu />
       </div>
       </body>
     </html>
