@@ -6,17 +6,13 @@ import { motion, useAnimation } from 'framer-motion';
 import {
     BsSearch,
     BsQuestionSquareFill ,
-    BsBookmarkFill,
     BsFillArrowLeftSquareFill,
-    BsPeopleFill,
-    BsTerminalFill,
     BsFillArrowRightSquareFill,
     BsLayersFill,
     BsMapFill
 } from 'react-icons/bs';
 import { MdSource } from "react-icons/md";
 import { FaHistory } from "react-icons/fa";
-import { MdFeedback } from 'react-icons/md';
 import { FaCog } from 'react-icons/fa';
 
 import styles from './Sidebar.module.css'; // Importar estilos como módulo CSS
@@ -34,50 +30,41 @@ const Sidebar = () => {
         {
             name: 'Discover',
             href: '/',
-    
             items: [
                 {
                     title: 'Config',
                     icon: FaCog ,
-                    href: '/capas',
-    
+                    href: '/customization',
                 },
                 {
                     title: 'Fuentes',
                     icon: MdSource,
-                    href: '/capas',
-    
+                    href: '/sources',
                 },
                 {
                     title: 'Capas',
                     icon: BsLayersFill,
-                    href: '/capas',
-    
+                    href: '/layers',
                 },
                 {
                     title: 'Ayuda',
                     icon: BsQuestionSquareFill ,
-                    href: '/capas',
-    
+                    href: '/help',
                 },
                 {
                     title: 'Mapas',
                     icon: BsMapFill,
-                    href: '/capas',
-    
-                    
+                    href: '/maps',
                 },
                 {
                     title: 'Historial',
                     icon: FaHistory ,
-                    href: '/capas',
-    
+                    href: '/history',
                 },
                 {
                     title: 'Buscador',
                     icon: BsSearch,
-                    href: '/capas',
-    
+                    href: '/search',
                 },
             ],
         },
@@ -132,8 +119,6 @@ const Sidebar = () => {
     }, []);
 
     
-
-
     return (
         <div>
             <motion.div animate={controls} className={styles.sidebar}>

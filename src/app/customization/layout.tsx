@@ -9,7 +9,7 @@ export default function Layout() {
       <div>
         <motion.div className={styles.sidebarSubmenu}>
             <div className='grow'>
-                <p>Contenido del segundo sidebar</p>
+                <p>Configuracion</p>
             </div>
         </motion.div>
     </div>
