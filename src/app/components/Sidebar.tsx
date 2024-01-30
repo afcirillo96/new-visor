@@ -17,12 +17,13 @@ import { FaCog } from 'react-icons/fa';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import styles from './Sidebar.module.css';
-
+import { useRouter } from 'next/router';
 
 
 const Sidebar = () => {
     const [active, setActive] = useState(false);
     const pathname = usePathname();
+    // const router = useRouter()
 
     const controls = useAnimation();
     const controlText = useAnimation();
@@ -33,41 +34,13 @@ const Sidebar = () => {
             name: 'Discover',
             href: '/',
             items: [
-                {
-                    title: 'Config',
-                    icon: FaCog ,
-                    href: '/dashboard/customization',
-                },
-                {
-                    title: 'Fuentes',
-                    icon: MdSource,
-                    href: '/sources',
-                },
-                {
-                    title: 'Capas',
-                    icon: BsLayersFill,
-                    href: '/dashboard/layers',
-                },
-                {
-                    title: 'Ayuda',
-                    icon: BsQuestionSquareFill ,
-                    href: '/help',
-                },
-                {
-                    title: 'Mapas',
-                    icon: BsMapFill,
-                    href: '/maps',
-                },
-                {
-                    title: 'Historial',
-                    icon: FaHistory ,
-                    href: '/history',
-                },
-                {
-                    title: 'Buscador',
-                    icon: BsSearch,
-                    href: '/search',
-                },
+                { title: 'Config', icon: FaCog, href: '/dashboard/customization' },
+                { title: 'Fuentes', icon: MdSource, href: '/sources' },
+                { title: 'Capas', icon: BsLayersFill, href: '/dashboard/layers' },
+                { title: 'Ayuda', icon: BsQuestionSquareFill, href: '/help' },
+                { title: 'Mapas', icon: BsMapFill, href: '/maps' },
+                { title: 'Historial', icon: FaHistory, href: '/history' },
+                { title: 'Buscador', icon: BsSearch, href: '/search' },
             ],
         },
     ];
@@ -116,6 +89,10 @@ const Sidebar = () => {
         }
     };
 
+    // const toggleBtn = () => {
+    //     router.push('/sources');
+    // };
+
     useEffect(() => {
         showMore();
     }, []);
@@ -147,7 +124,7 @@ const Sidebar = () => {
 
                             {/* Buttons */}
                             {group.items.map((item, index2) => (
-                                <Link href={item.href} key={index2} >
+                                <Link href={item.href} key={index2}>
                                     <div className={styles.menuButton}>
                                         <item.icon className={`${pathname == item.href ? styles.buttonIconActive : styles.buttonIcon}`}/>
                                         <motion.p animate={controlText} className={`${pathname == item.href ? styles.buttonTextActive : styles.buttonText}`}>
