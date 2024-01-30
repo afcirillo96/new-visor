@@ -8,6 +8,18 @@
     z-index: 99999;
   }
 
+  .sidebarSubmenu {
+    position: fixed;
+    top: 0;
+    left: 168px;
+    height: 100%;
+    width: 280px;
+    background: #242C4F;
+    text-emphasis-color: #fff;
+    transition: left 0.3s ease;
+    z-index: 99999;
+  }
+  
   .open {
     left: -0px; /* Mostrar el menú por defecto */
   }
