@@ -1,7 +1,6 @@
 .sidebar {
     position: fixed;
     top: 0;
-    width: 250px;
     height: 100%;
     background: #242C4F;
     text-emphasis-color: #fff;
@@ -35,14 +34,13 @@
     color: #fff ;
     cursor: pointer;
     font-size: 2rem;
-    left: 207px;
     position: relative;
     top: 7px;
     z-index: 999;
   }
   
   .sidebarButtonOpen {
-    left: 207px;
+    left: 127px;
   }
 
   .sidebarButtonClosed {

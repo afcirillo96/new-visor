@@ -32,7 +32,7 @@ const Sidebar = () => {
 
     const showMore = () => {
         controls.start({
-            width: '250px',
+            width: '168px',
             transition: { duration: 0.101 },
         });
         controlText.start({
@@ -63,6 +63,15 @@ const Sidebar = () => {
             opacity: 0,
         });
         setActive(false);
+    };
+
+    const toggleSidebar = () => {
+        setActive(!active);
+        if (!active) {
+            showMore();
+        } else {
+            showLess();
+        }
     };
 
     useEffect(() => {
@@ -139,18 +148,15 @@ const Sidebar = () => {
             </Head> */}
 
             <motion.div animate={controls} className={styles.sidebar}>
-                {active && (
-                    <BsFillArrowLeftSquareFill
-                        onClick={showLess}
-                        className={`${styles.sidebarButton} ${active ? styles.sidebarButtonOpen : ''}`}
-                    />
-                )}
-                {!active && (
-                    <BsFillArrowRightSquareFill
-                        onClick={showMore}
-                        className={`${styles.sidebarButton} ${!active ? styles.sidebarButtonClosed : ''}`}
-                    />
-                )}
+
+                <div onClick={toggleSidebar}>
+                    {active ? (
+                        <BsFillArrowLeftSquareFill className={`${styles.sidebarButton} ${styles.sidebarButtonOpen}`} />
+                    ) : (
+                        <BsFillArrowRightSquareFill className={`${styles.sidebarButton} ${styles.sidebarButtonClosed}`} />
+                    )}
+                </div>
+
 
                 <div className='grow'>
                     {data.map((group, index) => (
