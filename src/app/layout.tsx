@@ -18,12 +18,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}
-      <div>
-          <Sidebar/>
-        <div>{children}</div>
-          <MapComponent/>
-      </div>
+      <body className={inter.className}>
+        <div>
+            <Sidebar/>
+              <div>{children}</div>
+            <MapComponent/>
+        </div>
       </body>
     </html>
   );
