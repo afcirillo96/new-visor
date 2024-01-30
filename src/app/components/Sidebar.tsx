@@ -29,6 +29,59 @@ const Sidebar = () => {
     const controls = useAnimation();
     const controlText = useAnimation();
     const controlTitleText = useAnimation();
+    
+    const data = [
+        {
+            name: 'Discover',
+            href: '/',
+    
+            items: [
+                {
+                    title: 'Config',
+                    icon: FaCog ,
+                    href: '/capas',
+    
+                },
+                {
+                    title: 'Fuentes',
+                    icon: MdSource,
+                    href: '/capas',
+    
+                },
+                {
+                    title: 'Capas',
+                    icon: BsLayersFill,
+                    href: '/capas',
+    
+                },
+                {
+                    title: 'Ayuda',
+                    icon: BsQuestionSquareFill ,
+                    href: '/capas',
+    
+                },
+                {
+                    title: 'Mapas',
+                    icon: BsMapFill,
+                    href: '/capas',
+    
+                    
+                },
+                {
+                    title: 'Historial',
+                    icon: FaHistory ,
+                    href: '/capas',
+    
+                },
+                {
+                    title: 'Buscador',
+                    icon: BsSearch,
+                    href: '/capas',
+    
+                },
+            ],
+        },
+    ];
 
     const showMore = () => {
         controls.start({
@@ -79,56 +132,6 @@ const Sidebar = () => {
     }, []);
 
     
-    const data = [
-        {
-            name: 'Discover',
-            items: [
-                {
-                    title: 'Config',
-                    icon: FaCog ,
-                    href: '/capas',
-
-                },
-                {
-                    title: 'Fuentes',
-                    icon: MdSource,
-                    href: '/capas',
-
-                },
-                {
-                    title: 'Capas',
-                    icon: BsLayersFill,
-                    href: '/capas',
-
-                },
-                {
-                    title: 'Ayuda',
-                    icon: BsQuestionSquareFill ,
-                    href: '/capas',
-
-                },
-                {
-                    title: 'Mapas',
-                    icon: BsMapFill,
-                    href: '/capas',
-
-                    
-                },
-                {
-                    title: 'Historial',
-                    icon: FaHistory ,
-                    href: '/capas',
-
-                },
-                {
-                    title: 'Buscador',
-                    icon: BsSearch,
-                    href: '/capas',
-
-                },
-            ],
-        },
-    ];
 
 
     return (
@@ -136,7 +139,9 @@ const Sidebar = () => {
             <motion.div animate={controls} className={styles.sidebar}>
                 <div onClick={toggleSidebar}>
                     {active ? (
-                        <BsFillArrowLeftSquareFill className={`${styles.sidebarButton} ${styles.sidebarButtonOpen}`} />
+                        <Link href={'/'}>
+                            <BsFillArrowLeftSquareFill className={`${styles.sidebarButton} ${styles.sidebarButtonOpen}`} />
+                        </Link>
                     ) : (
                         <BsFillArrowRightSquareFill className={`${styles.sidebarButton} ${styles.sidebarButtonClosed}`} />
                     )}
