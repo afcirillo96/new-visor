@@ -34,7 +34,7 @@ const Sidebar = () => {
                 {
                     title: 'Config',
                     icon: FaCog ,
-                    href: '/customization',
+                    href: '/dashboard/customization',
                 },
                 {
                     title: 'Fuentes',
@@ -44,7 +44,7 @@ const Sidebar = () => {
                 {
                     title: 'Capas',
                     icon: BsLayersFill,
-                    href: '/layers',
+                    href: '/dashboard/layers',
                 },
                 {
                     title: 'Ayuda',
