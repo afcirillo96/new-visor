@@ -17,11 +17,14 @@ import { FaCog } from 'react-icons/fa';
 
 import styles from './Sidebar.module.css'; // Importar estilos como módulo CSS
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 
 
 const Sidebar = () => {
     const [active, setActive] = useState(false);
+    const pathname = usePathname();
+
     const controls = useAnimation();
     const controlText = useAnimation();
     const controlTitleText = useAnimation();
@@ -140,10 +143,10 @@ const Sidebar = () => {
                             </motion.p>
 
                             {group.items.map((item, index2) => (
-                                <Link href={item.href} key={index2}>
+                                <Link href={item.href} key={index2} >
                                     <div className={styles.menuButton}>
-                                        <item.icon className={styles.buttonIcon} />
-                                        <motion.p animate={controlText} className={styles.buttonText}>
+                                        <item.icon className={`${pathname == item.href ? styles.buttonIconActive : styles.buttonIcon}`}/>
+                                        <motion.p animate={controlText} className={`${pathname == item.href ? styles.buttonTextActive : styles.buttonText}`}>
                                             {' '}
                                             {item.title}
                                         </motion.p>

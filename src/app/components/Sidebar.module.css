@@ -72,21 +72,8 @@
     color: rgb(255, 0, 0) ;
   }
   
-  .buttonText {
-    margin-bottom: 0.5rem;
-    margin-left: 1rem;
-    font-size: 1rem; 
-    font-weight: 600; 
-    color: #ffffff;
-  }
 
-  .buttonIcon {
-    margin-bottom: 0.5rem;
-    font-size: 1.5rem; 
-    font-weight: 600; 
-    color: #ffffff;
-  }  
-  
+  /* Buttons */ 
   .menuButton {
     cursor: pointer;
     display: flex;
@@ -95,5 +82,35 @@
     padding-left: 1rem;
     padding-right: 1rem;
   }
+
+  .buttonText {
+    margin-bottom: 0.5rem;
+    margin-left: 1rem;
+    font-size: 1rem; 
+    font-weight: 600; 
+    color: #ffffff;
+  }
+
+  .buttonTextActive {
+    color:#E7BA61;
+    margin-bottom: 0.5rem;
+    margin-left: 1rem;
+    font-size: 1rem; 
+    font-weight: 600; 
+  }
+
+  .buttonIcon {
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem; 
+    font-weight: 600; 
+  } 
+
+  .buttonIconActive {
+    color:#E7BA61;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem; 
+    font-weight: 600; 
+  }  
   
   
