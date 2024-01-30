@@ -14,10 +14,9 @@ import {
 import { MdSource } from "react-icons/md";
 import { FaHistory } from "react-icons/fa";
 import { FaCog } from 'react-icons/fa';
-
-import styles from './Sidebar.module.css'; // Importar estilos como módulo CSS
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import styles from './Sidebar.module.css';
 
 
 
@@ -125,6 +124,7 @@ const Sidebar = () => {
     return (
         <div>
             <motion.div animate={controls} className={styles.sidebar}>
+                {/* Sidebar Show/Hide Button */}
                 <div onClick={toggleSidebar}>
                     {active ? (
                         <Link href={'/'}>
@@ -135,13 +135,17 @@ const Sidebar = () => {
                     )}
                 </div>
 
+                {/* Menu Buttons */}
                 <div className='grow'>
                     {data.map((group, index) => (
                         <div key={index} className='my-2'>
+
+                            {/* Menu Title */}
                             <motion.p animate={controlTitleText} className={styles.sidebarTitleText}>
                                 {group.name}
                             </motion.p>
 
+                            {/* Buttons */}
                             {group.items.map((item, index2) => (
                                 <Link href={item.href} key={index2} >
                                     <div className={styles.menuButton}>
@@ -153,9 +157,11 @@ const Sidebar = () => {
                                     </div>
                                 </Link>
                             ))}
+
                         </div>
                     ))}
                 </div>
+
             </motion.div>
         </div>
     );
