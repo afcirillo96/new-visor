@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
-
 import {
     BsSearch,
     BsQuestionSquareFill ,
@@ -11,12 +10,12 @@ import {
     BsLayersFill,
     BsMapFill
 } from 'react-icons/bs';
+import Link from 'next/link';
+import styles from './Sidebar.module.css';
 import { MdSource } from "react-icons/md";
 import { FaHistory } from "react-icons/fa";
 import { FaCog } from 'react-icons/fa';
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import styles from './Sidebar.module.css';
 import { useRouter } from 'next/navigation';
 
 
@@ -29,7 +28,7 @@ const Sidebar = () => {
     const controlText = useAnimation();
     const controlTitleText = useAnimation();
     
-    const data = [
+    const pagesData = [
         {
             name: 'Discover',
             href: '/',
@@ -121,7 +120,7 @@ const Sidebar = () => {
 
                 {/* Menu Buttons */}
                 <div className='grow'>
-                    {data.map((group, index) => (
+                    {pagesData.map((group, index) => (
                         <div key={index} className='my-2'>
 
                             {/* Menu Title */}
