@@ -36,7 +36,7 @@ const Sidebar = () => {
             items: [
                 { title: 'Config', icon: FaCog, href: '/dashboard/customization' },
                 { title: 'Fuentes', icon: MdSource, href: '/dashboard/sources' },
-                { title: 'Capas', icon: BsLayersFill, href: '/dashboard/dashboard/layers' },
+                { title: 'Capas', icon: BsLayersFill, href: '/dashboard/layers' },
                 { title: 'Ayuda', icon: BsQuestionSquareFill, href: '/dashboard/help' },
                 { title: 'Mapas', icon: BsMapFill, href: '/dashboard/maps' },
                 { title: 'Historial', icon: FaHistory, href: '/dashboard/history' },
