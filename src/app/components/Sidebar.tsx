@@ -35,12 +35,12 @@ const Sidebar = () => {
             href: '/',
             items: [
                 { title: 'Config', icon: FaCog, href: '/dashboard/customization' },
-                { title: 'Fuentes', icon: MdSource, href: '/sources' },
-                { title: 'Capas', icon: BsLayersFill, href: '/dashboard/layers' },
-                { title: 'Ayuda', icon: BsQuestionSquareFill, href: '/help' },
-                { title: 'Mapas', icon: BsMapFill, href: '/maps' },
-                { title: 'Historial', icon: FaHistory, href: '/history' },
-                { title: 'Buscador', icon: BsSearch, href: '/search' },
+                { title: 'Fuentes', icon: MdSource, href: '/dashboard/sources' },
+                { title: 'Capas', icon: BsLayersFill, href: '/dashboard/dashboard/layers' },
+                { title: 'Ayuda', icon: BsQuestionSquareFill, href: '/dashboard/help' },
+                { title: 'Mapas', icon: BsMapFill, href: '/dashboard/maps' },
+                { title: 'Historial', icon: FaHistory, href: '/dashboard/history' },
+                { title: 'Buscador', icon: BsSearch, href: '/dashboard/searcher' },
             ],
         },
     ];
