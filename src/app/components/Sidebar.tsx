@@ -17,13 +17,13 @@ import { FaCog } from 'react-icons/fa';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import styles from './Sidebar.module.css';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 
 const Sidebar = () => {
     const [active, setActive] = useState(false);
     const pathname = usePathname();
-    // const router = useRouter()
+    const router = useRouter();
 
     const controls = useAnimation();
     const controlText = useAnimation();
@@ -34,13 +34,13 @@ const Sidebar = () => {
             name: 'Discover',
             href: '/',
             items: [
-                { title: 'Config', icon: FaCog, href: '/dashboard/customization' },
-                { title: 'Fuentes', icon: MdSource, href: '/dashboard/sources' },
-                { title: 'Capas', icon: BsLayersFill, href: '/dashboard/layers' },
-                { title: 'Ayuda', icon: BsQuestionSquareFill, href: '/dashboard/help' },
-                { title: 'Mapas', icon: BsMapFill, href: '/dashboard/maps' },
-                { title: 'Historial', icon: FaHistory, href: '/dashboard/history' },
-                { title: 'Buscador', icon: BsSearch, href: '/dashboard/searcher' },
+                { id: '1', title: 'Config', icon: FaCog, href: '/dashboard/customization' },
+                { id: '2', title: 'Fuentes', icon: MdSource, href: '/dashboard/sources' },
+                { id: '3', title: 'Capas', icon: BsLayersFill, href: '/dashboard/layers' },
+                { id: '4', title: 'Ayuda', icon: BsQuestionSquareFill, href: '/dashboard/help' },
+                { id: '5', title: 'Mapas', icon: BsMapFill, href: '/dashboard/maps' },
+                { id: '6', title: 'Historial', icon: FaHistory, href: '/dashboard/history' },
+                { id: '7', title: 'Buscador', icon: BsSearch, href: '/dashboard/searcher' },
             ],
         },
     ];
@@ -89,9 +89,16 @@ const Sidebar = () => {
         }
     };
 
-    // const toggleBtn = () => {
-    //     router.push('/sources');
-    // };
+    const [buttonActive, setButtonActive] = useState('');
+    
+    const toggleButtons = (id: string) => {
+        if (buttonActive === id) {
+            setButtonActive('');
+            router.push('/')
+        } else {
+            setButtonActive(id);
+        }
+    };
 
     useEffect(() => {
         showMore();
@@ -124,15 +131,17 @@ const Sidebar = () => {
 
                             {/* Buttons */}
                             {group.items.map((item, index2) => (
-                                <Link href={item.href} key={index2}>
-                                    <div className={styles.menuButton}>
-                                        <item.icon className={`${pathname == item.href ? styles.buttonIconActive : styles.buttonIcon}`}/>
-                                        <motion.p animate={controlText} className={`${pathname == item.href ? styles.buttonTextActive : styles.buttonText}`}>
-                                            {' '}
-                                            {item.title}
-                                        </motion.p>
-                                    </div>
-                                </Link>
+                                <button onClick={() => toggleButtons(item.id)} key={index2}> {/* button added to fix routes issue */}
+                                    <Link href={item.href}  >
+                                        <div className={styles.menuButton} >
+                                            <item.icon className={`${pathname == item.href ? styles.buttonIconActive : styles.buttonIcon}`}/>
+                                            <motion.p animate={controlText} className={`${pathname == item.href ? styles.buttonTextActive : styles.buttonText}`}>
+                                                {' '}
+                                                {item.title}
+                                            </motion.p>
+                                        </div>
+                                    </Link>
+                                </button>
                             ))}
 
                         </div>
