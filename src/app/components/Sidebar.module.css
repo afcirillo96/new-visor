@@ -2,7 +2,7 @@
     position: fixed;
     top: 0;
     height: 100%;
-    background: #242C4F;
+    background: var(--background--color);
     text-emphasis-color: #fff;
     transition: left 0.3s ease;
     z-index: 99999;
@@ -10,7 +10,7 @@
 
   .subMenu {
     position: fixed;
-    background: #242C4F;
+    background: var(--background--color);
     text-emphasis-color: #fff;
     transition: left 0.3s ease;
     z-index: 99999;
@@ -31,11 +31,11 @@
   }
     
   .open {
-    left: -0px; /* Mostrar el menú por defecto */
+    left: -0px;
   }
   
   .closed {
-    left: -200px; /* Ocultar el menú por defecto */
+    left: -200px;
   }
   
   .sidebar ul {
