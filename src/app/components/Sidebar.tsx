@@ -79,6 +79,18 @@ const Sidebar = () => {
         setActive(false);
     };
 
+    const [submenuActive, setSubmenuActive] = useState(false); // Estado para el submenu
+
+    const toggleSubmenu = () => {
+        setSubmenuActive(!submenuActive);
+    };
+
+    
+  const handleDivLoad = () => {
+    router.push('/ruta-a-redirigir');
+    console.log("ruta activada")
+  };
+
     const toggleSidebar = () => {
         setActive(!active);
         if (!active) {
@@ -130,8 +142,8 @@ const Sidebar = () => {
 
                             {/* Buttons */}
                             {group.items.map((item, index2) => (
-                                <button onClick={() => toggleButtons(item.id)} key={index2}> {/* button added to fix routes issue */}
-                                    <Link href={item.href}  >
+                                <button onClick={toggleSubmenu} key={index2}> {/* button added to fix routes issue */}
+                                    {/* <Link href={item.href}  > */}
                                         <div className={styles.menuButton} >
                                             <item.icon className={`${pathname == item.href ? styles.buttonIconActive : styles.buttonIcon}`}/>
                                             <motion.p animate={controlText} className={`${pathname == item.href ? styles.buttonTextActive : styles.buttonText}`}>
@@ -139,9 +151,11 @@ const Sidebar = () => {
                                                 {item.title}
                                             </motion.p>
                                         </div>
-                                    </Link>
+                                    {/* </Link> */}
                                 </button>
                             ))}
+
+                            {submenuActive && <motion.div onLoad={handleDivLoad} className={`${styles.subMenu} ${styles.subMenuStandard}`}></motion.div>}
 
                         </div>
                     ))}
