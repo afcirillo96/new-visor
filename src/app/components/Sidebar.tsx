@@ -108,15 +108,15 @@ const Sidebar = () => {
         <div>
             <motion.div animate={controls} className={styles.sidebar}>
                 {/* Sidebar Show/Hide Button */}
-                <div onClick={toggleSidebar}>
+                <button className={`${styles.sidebarButton} ${active ? styles.sidebarButtonOpen : styles.sidebarButtonClosed}`} onClick={toggleSidebar}>
                     {active ? (
                         <Link href={'/'}>
-                            <BsFillArrowLeftSquareFill className={`${styles.sidebarButton} ${styles.sidebarButtonOpen}`} />
+                            <BsFillArrowLeftSquareFill/>
                         </Link>
                     ) : (
-                        <BsFillArrowRightSquareFill className={`${styles.sidebarButton} ${styles.sidebarButtonClosed}`} />
+                        <BsFillArrowRightSquareFill/>
                     )}
-                </div>
+                </button>
 
                 {/* Menu Buttons */}
                 <div className='grow'>
