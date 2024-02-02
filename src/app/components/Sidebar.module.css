@@ -1,13 +1,55 @@
+/* Sidebar */
 .sidebar {
     position: fixed;
     top: 0;
+    width: 168px;
     height: 100%;
     background: var(--background--color);
     text-emphasis-color: #fff;
     transition: left 0.3s ease;
     z-index: 99999;
   }
-
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    padding: 10px;
+    color: #fff;
+  }
+  
+  .sidebar li:hover {
+    background: #fff;
+  }
+  
+  .sidebarButton {
+    color: #fff ;
+    cursor: pointer;
+    font-size: 2rem;
+    position: relative;
+    top: 7px;
+    z-index: 999;
+  }
+  
+  .sidebarButtonOpen {
+    left: 127px;
+  }
+  
+  .sidebarButtonClosed {
+    left: 11px;
+  }
+  
+  .sidebarTitleText {
+    margin-bottom: 0.5rem;
+    margin-left: 1rem;
+    font-size: 1rem; 
+    font-weight: 600; 
+    color: #ffffff;
+  }
+  
+  /* SubMenu */
   .subMenu {
     position: fixed;
     background: var(--background--color);
@@ -29,61 +71,8 @@
     height: 100%;
     width: 100%;
   }
-    
-  .open {
-    left: -0px;
-  }
   
-  .closed {
-    left: -200px;
-  }
-  
-  .sidebar ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .sidebar li {
-    padding: 10px;
-    color: #fff;
-  }
-  
-  .sidebar li:hover {
-    background: #fff;
-  }
-
-  .sidebarButton {
-    color: #fff ;
-    cursor: pointer;
-    font-size: 2rem;
-    position: relative;
-    top: 7px;
-    z-index: 999;
-  }
-  
-  .sidebarButtonOpen {
-    left: 127px;
-  }
-
-  .sidebarButtonClosed {
-    left: 11px;
-  }
-  
-  .sidebarTitleText {
-    margin-bottom: 0.5rem;
-    margin-left: 1rem;
-    font-size: 1rem; 
-    font-weight: 600; 
-    color: #ffffff;
-  }
-  
-  .custom-icon:hover {
-    display: block;
-    color: rgb(255, 0, 0) ;
-  }
-  
-
-  /* Buttons */ 
+  /* Menu Buttons */ 
   .menuButton {
     cursor: pointer;
     display: flex;
@@ -92,7 +81,7 @@
     padding-left: 1rem;
     padding-right: 1rem;
   }
-
+  
   .buttonText {
     margin-bottom: 0.5rem;
     margin-left: 1rem;
