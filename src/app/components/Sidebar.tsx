@@ -130,7 +130,10 @@ const Sidebar = () => {
 
                             {/* Buttons */}
                             {group.items.map((item, index2) => (
-                                <button onClick={() => toggleButtons(item.id)} key={index2}> {/* button added to fix routes issue */}
+                                <button onClick={() => {
+                                    toggleButtons(item.id);
+                                    showMore();
+                                }} key={index2}> {/* button added to fix routes issue */}
                                     <Link href={item.href}  >
                                         <div className={styles.menuButton} >
                                             <item.icon className={`${pathname == item.href ? styles.buttonIconActive : styles.buttonIcon}`}/>
