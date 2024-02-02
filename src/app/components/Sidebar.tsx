@@ -52,7 +52,7 @@ const Sidebar = () => {
         controlText.start({
             opacity: 1,
             display: 'block',
-            transition: { delay: 0.3 },
+            // transition: { delay: 0.3 },
         });
         controlTitleText.start({
             opacity: 1,
@@ -70,7 +70,6 @@ const Sidebar = () => {
         controlText.start({
             opacity: 0,
             display: 'none',
-
         });
 
         controlTitleText.start({
