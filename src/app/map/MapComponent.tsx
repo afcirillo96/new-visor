@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect } from 'react';
 import maplibregl from 'maplibre-gl';
-import 'maplibre-gl/dist/maplibre-gl.css'; // Asegúrate de importar los estilos CSS
+import 'maplibre-gl/dist/maplibre-gl.css';
 
 const MapComponent = () => {
   useEffect(() => {
@@ -14,9 +14,14 @@ const MapComponent = () => {
       pitch: 0,
     });
     
-    // Agregar controles
+    //Controls
     map.addControl(new maplibregl.NavigationControl(), 'top-right');
-    
+    map.addControl(new maplibregl.ScaleControl({}), 'bottom-right');
+    map.addControl(new maplibregl.GeolocateControl({}), 'top-right');
+    map.addControl(new maplibregl.FullscreenControl(), 'top-right');
+    // map.addControl(new maplibregl.AttributionControl({compact: false}), 'bottom-right');
+    // map.addControl(new maplibregl.MarkerControl({}), 'top-right');
+
     return () => map.remove();
   }, []);
   
