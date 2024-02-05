@@ -20,7 +20,7 @@ import { useRouter } from 'next/navigation';
 
 
 const Sidebar = () => {
-    const [active, setActive] = useState(false);
+    const [sideBarActive, setSideBarActive] = useState(false);
     const pathname = usePathname();
     const router = useRouter();
 
@@ -58,7 +58,7 @@ const Sidebar = () => {
             opacity: 1,
             transition: { delay: 0.3 },
         });
-        setActive(true);
+        setSideBarActive(true);
     };
 
     const showLess = () => {
@@ -75,12 +75,12 @@ const Sidebar = () => {
         controlTitleText.start({
             opacity: 0,
         });
-        setActive(false);
+        setSideBarActive(false);
     };
 
     const toggleSidebar = () => {
-        setActive(!active);
-        if (!active) {
+        setSideBarActive(!sideBarActive);
+        if (!sideBarActive) {
             showMore();
         } else {
             showLess();
@@ -98,6 +98,7 @@ const Sidebar = () => {
         }
     };
 
+    // How to start the sidebar
     useEffect(() => {
         showMore();
     }, []);
@@ -107,8 +108,8 @@ const Sidebar = () => {
         <div>
             <motion.div animate={controls} className={styles.sidebar}>
                 {/* Sidebar Show/Hide Button */}
-                <button className={`${styles.sidebarButton} ${active ? styles.sidebarButtonOpen : styles.sidebarButtonClosed}`} onClick={toggleSidebar}>
-                    {active ? (
+                <button className={`${styles.sidebarButton} ${sideBarActive ? styles.sidebarButtonOpen : styles.sidebarButtonClosed}`} onClick={toggleSidebar}>
+                    {sideBarActive ? (
                         <Link href={'/'}>
                             <BsFillArrowLeftSquareFill/>
                         </Link>

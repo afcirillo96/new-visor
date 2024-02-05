@@ -2,7 +2,7 @@
 .sidebar {
     position: fixed;
     top: 0;
-    width: 168px;
+    width: 55px;
     height: 100%;
     background: var(--background--color);
     text-emphasis-color: #fff;
@@ -42,6 +42,7 @@
   }
   
   .sidebarTitleText {
+    opacity: 0;
     margin-bottom: 0.5rem;
     margin-left: 1rem;
     font-size: 1rem; 
@@ -83,6 +84,8 @@
   }
   
   .buttonText {
+    opacity: 0;
+    display: none;
     margin-bottom: 0.5rem;
     margin-left: 1rem;
     font-size: 1rem; 
