@@ -33,17 +33,21 @@ export default function Layout() {
 
     // Función para manejar el clic del botón de color por defecto
     const handleDefaultColorClick = () => {
-        // // Finalmente, actualiza el valor en el localStorage utilizando setItem()
+        // Finalmente, actualiza el valor en el localStorage utilizando setItem()
         // localStorage.setItem("colorFondoGlobal", valorVariableCSS);
         // console.log("Limpiar localStorage");
     };
 
+    const handleSubmit = (e: { preventDefault: () => void; }) => {
+        e.preventDefault();
+        // Puedes agregar lógica adicional aquí si es necesario al enviar el formulario
+    };
 
     return (
         <div>
             <motion.div className={`${styles.subMenu} ${styles.subMenuConfig}`}>
                 <div className='grow'>
-                    <div>
+                    <form onSubmit={handleSubmit}>
                         <h1>Configuración de Estilos</h1>
                         <label htmlFor="colorFondo">Color de Fondo:</label>
                         <input
@@ -52,8 +56,9 @@ export default function Layout() {
                             value={colorFondo}
                             onChange={handleChangeColorFondo}
                         />
-                        <button onClick={handleDefaultColorClick}>Color por Defecto</button>
-                    </div>
+                        <button type="button" onClick={handleDefaultColorClick}>Color por Defecto</button>
+                        <button type="submit">Guardar</button>
+                    </form>
                 </div>
             </motion.div>
         </div>

@@ -30,7 +30,7 @@ const Sidebar = () => {
     
     const pagesData = [
         {
-            name: 'Discover',
+            name: 'Neo Visor',
             href: '/',
             items: [
                 { id: '1', title: 'Config', icon: FaCog, href: '/dashboard/customization' },
